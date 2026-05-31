@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Sifter</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="top-bar">
+        <div>
+          <h1>Image Sifter</h1>
+          <p id="folderLabel">选择一个图片文件夹开始。</p>
+        </div>
+        <button id="chooseFolderButton" class="primary-button">选择文件夹</button>
+      </header>
+
+      <section class="viewer" aria-live="polite">
+        <div id="emptyState" class="empty-state">
+          <h2>还没有选择文件夹</h2>
+          <p>选择后，可以用 ← 和 → 浏览图片，用 Enter 送到回收站。</p>
+        </div>
+
+        <div id="imageStage" class="image-stage hidden">
+          <img id="currentImage" alt="当前图片">
+        </div>
+      </section>
+
+      <section class="status-row">
+        <div>
+          <div id="fileName" class="file-name">未选择图片</div>
+          <div id="progressLabel" class="progress-label">0 / 0</div>
+        </div>
+        <div id="message" class="message"></div>
+      </section>
+
+      <footer class="controls">
+        <button id="previousButton" class="control-button" disabled>
+          <span>←</span>
+          上一张
+        </button>
+        <button id="trashButton" class="danger-button" disabled>
+          <span>Enter</span>
+          丢到回收站
+        </button>
+        <button id="nextButton" class="control-button" disabled>
+          下一张
+          <span>→</span>
+        </button>
+      </footer>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
