@@ -4,9 +4,19 @@
 image-sifter/
   README.md
   CHANGELOG.md
+  CODE_OF_CONDUCT.md
+  CONTRIBUTING.md
   LICENSE
   package.json
   package-lock.json
+  SECURITY.md
+  .github/
+    ISSUE_TEMPLATE/
+      bug_report.md
+      feature_request.md
+    workflows/
+      ci.yml
+    pull_request_template.md
   docs/
     PRD.md
     TECH_ARCHITECTURE.md
@@ -35,9 +45,13 @@ image-sifter/
 
 - `README.md`：项目介绍、安装、运行和使用说明。
 - `CHANGELOG.md`：面向用户的变更记录。
+- `CODE_OF_CONDUCT.md`：社区行为规范。
+- `CONTRIBUTING.md`：贡献说明。
 - `LICENSE`：MIT 开源许可证。
 - `package.json`：项目脚本和依赖声明。
 - `package-lock.json`：依赖锁定文件，保证安装结果可复现。
+- `SECURITY.md`：安全边界和漏洞报告说明。
+- `.github/`：GitHub issue、PR 模板和 CI 工作流。
 
 ## docs
 

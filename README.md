@@ -72,6 +72,14 @@ npm test
 - 删除操作使用系统回收站，不做永久删除。
 - 不要把个人图片提交到公开仓库。
 
+## 贡献方式
+
+欢迎通过 issue 和 pull request 改进项目。贡献前请阅读 `CONTRIBUTING.md` 和 `SECURITY.md`。
+
+## 开源协议
+
+MIT License，详见 `LICENSE`。
+
 ## 已知限制
 
 - 当前只扫描所选文件夹的第一层图片，不递归扫描子文件夹。

@@ -8,6 +8,7 @@
 - Product, architecture, and project structure documents.
 - Electron desktop app for selecting a folder, viewing images, navigating with arrow keys, and sending images to the recycle bin with Enter.
 - Core tests for image filtering, natural sorting, and navigation behavior.
+- Open source project health files: contribution guide, security policy, code of conduct, issue templates, pull request template, and CI workflow.
 
 ### Security
 
