@@ -42,6 +42,14 @@ npm install
 npm start
 ```
 
+Windows 上也可以直接双击：
+
+```text
+启动 Image Sifter.bat
+```
+
+如果依赖缺失，这个启动文件会自动运行 `npm install`。如果启动失败，窗口会停住并显示错误信息。
+
 ## 测试方式
 
 ```bash
