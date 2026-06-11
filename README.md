@@ -2,6 +2,8 @@
 
 Image Sifter 是一个本地图片清理桌面小工具：选择图片文件夹后，逐张查看图片，用快捷键快速保留或送到回收站。
 
+![Image Sifter 界面展示](docs/assets/image-sifter-preview.png)
+
 ## 解决的问题
 
 整理大量图片时，手动打开、关闭、删除文件很慢。Image Sifter 把流程简化成一个专注窗口：看图、上一张、下一张、Enter 删除。
