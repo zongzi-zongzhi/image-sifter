@@ -3,12 +3,14 @@ const path = require("node:path");
 const { app, BrowserWindow, dialog, ipcMain, shell } = require("electron");
 const { toImageItems } = require("../shared/imageFiles");
 
+let mainWindow = null;
+
 function createWindow() {
-  const mainWindow = new BrowserWindow({
-    width: 1180,
-    height: 820,
-    minWidth: 860,
-    minHeight: 620,
+  mainWindow = new BrowserWindow({
+    width: 920,
+    height: 560,
+    minWidth: 920,
+    minHeight: 560,
     title: "Image Sifter",
     backgroundColor: "#f7f6f1",
     webPreferences: {
@@ -18,7 +20,25 @@ function createWindow() {
     },
   });
 
+  mainWindow.on("closed", () => {
+    mainWindow = null;
+  });
+
   mainWindow.loadFile(path.join(__dirname, "../renderer/index.html"));
+}
+
+function showMainWindow() {
+  if (!mainWindow) {
+    createWindow();
+    return;
+  }
+
+  if (mainWindow.isMinimized()) {
+    mainWindow.restore();
+  }
+
+  mainWindow.show();
+  mainWindow.focus();
 }
 
 async function readImagesFromFolder(folderPath) {
@@ -66,15 +86,23 @@ ipcMain.handle("image:trash", async (_event, filePath) => {
   };
 });
 
-app.whenReady().then(() => {
-  createWindow();
+const hasSingleInstanceLock = app.requestSingleInstanceLock();
 
-  app.on("activate", () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow();
-    }
+if (!hasSingleInstanceLock) {
+  app.quit();
+} else {
+  app.on("second-instance", () => {
+    showMainWindow();
   });
-});
+
+  app.whenReady().then(() => {
+    createWindow();
+
+    app.on("activate", () => {
+      showMainWindow();
+    });
+  });
+}
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {

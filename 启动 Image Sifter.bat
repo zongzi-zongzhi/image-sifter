@@ -19,9 +19,4 @@ if not exist node_modules\electron\dist\electron.exe (
   )
 )
 
-call npm start
-if errorlevel 1 (
-  echo Image Sifter failed to start.
-  pause
-  exit /b 1
-)
+start "" "%CD%\node_modules\electron\dist\electron.exe" "%CD%"
